@@ -33,7 +33,7 @@ public class ProcurementSchedulerJob extends Job {
 		try {
 			bookOrders = ProcurementService.getOrderFromQueue();
 			if (bookOrders.getOrder_book_isbns().size() > 0) {
-				System.out.println("Request sending to Publisher....");
+				System.out.println("Request sending to Publisher......");
 				Client client = Client.create();
 				String url = "http://54.215.133.131:9000/orders";
 				WebResource webRes = client.resource(url);
