@@ -587,3 +587,89 @@ INFO  [2014-04-07 02:19:22,160] org.eclipse.jetty.server.handler.ContextHandler:
 INFO  [2014-04-07 02:19:22,298] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
 INFO  [2014-04-07 02:19:22,298] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
 INFO  [2014-04-07 02:19:26,764] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
+INFO  [2014-04-07 03:43:24,790] org.reflections.Reflections: Reflections took 80 ms to scan 1 urls, producing 2 keys and 2 values 
+DEBUG [2014-04-07 03:43:25,362] edu.sjsu.cmpe.procurement.ProcurementService: Queue name is /queue/78033.book.orders. Topic is /topic/78033.book.
+WARN  [2014-04-07 03:43:25,378] com.yammer.dropwizard.config.ServerFactory: 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!    THIS SERVICE HAS NO HEALTHCHECKS. THIS MEANS YOU WILL NEVER KNOW IF IT    !
+!    DIES IN PRODUCTION, WHICH MEANS YOU WILL NEVER KNOW IF YOU'RE LETTING     !
+!     YOUR USERS DOWN. YOU SHOULD ADD A HEALTHCHECK FOR EACH DEPENDENCY OF     !
+!     YOUR SERVICE WHICH FULLY (BUT LIGHTLY) TESTS YOUR SERVICE'S ABILITY TO   !
+!      USE THAT SERVICE. THINK OF IT AS A CONTINUOUS INTEGRATION TEST.         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+INFO  [2014-04-07 03:43:25,453] com.yammer.dropwizard.cli.ServerCommand: Starting procurement-service
+INFO  [2014-04-07 03:43:25,454] org.eclipse.jetty.server.Server: jetty-8.1.10.v20130312
+INFO  [2014-04-07 03:43:25,545] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.17.1 02/28/2013 12:47 PM'
+INFO  [2014-04-07 03:43:25,576] com.yammer.dropwizard.config.Environment: The following paths were found for the configured resources:
+
+    GET     / (edu.sjsu.cmpe.procurement.api.resources.RootResource)
+
+INFO  [2014-04-07 03:43:25,576] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+INFO  [2014-04-07 03:43:25,790] org.quartz.impl.StdSchedulerFactory: Using default implementation for ThreadExecutor
+INFO  [2014-04-07 03:43:25,814] org.quartz.simpl.SimpleThreadPool: Job execution threads will use class loader of thread: main
+INFO  [2014-04-07 03:43:25,831] org.quartz.core.SchedulerSignalerImpl: Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+INFO  [2014-04-07 03:43:25,832] org.quartz.core.QuartzScheduler: Quartz Scheduler v.2.2.0 created.
+INFO  [2014-04-07 03:43:25,833] org.quartz.simpl.RAMJobStore: RAMJobStore initialized.
+INFO  [2014-04-07 03:43:25,833] org.quartz.core.QuartzScheduler: Scheduler meta-data: Quartz Scheduler (v2.2.0) 'DefaultQuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+INFO  [2014-04-07 03:43:25,833] org.quartz.impl.StdSchedulerFactory: Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+INFO  [2014-04-07 03:43:25,833] org.quartz.impl.StdSchedulerFactory: Quartz scheduler version: 2.2.0
+INFO  [2014-04-07 03:43:25,834] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+INFO  [2014-04-07 03:43:25,836] de.spinscale.dropwizard.jobs.JobManager: Jobs to run on application start: []
+INFO  [2014-04-07 03:43:25,837] de.spinscale.dropwizard.jobs.JobManager: Jobs with @Every annotation: [class edu.sjsu.cmpe.procurement.jobs.ProcurementSchedulerJob]
+INFO  [2014-04-07 03:43:25,848] de.spinscale.dropwizard.jobs.JobManager: Jobs with @On annotation: []
+INFO  [2014-04-07 03:43:25,883] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:9090
+INFO  [2014-04-07 03:43:25,889] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:9000
+ERROR [2014-04-07 03:43:41,642] org.quartz.core.JobRunShell: Job DEFAULT.6da64b5bd2ee-39684f35-ab6c-4d3a-9747-832a6c2e8b9b threw an unhandled Exception: 
+! java.lang.NullPointerException: null
+! at org.fusesource.stomp.jms.StompChannel.getConnectedHeader(StompChannel.java:521) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompChannel.getServerAndVersion(StompChannel.java:513) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsConnection.getChannel(StompJmsConnection.java:348) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsSession.getNextMessageId(StompJmsSession.java:855) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsSession.send(StompJmsSession.java:689) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsSession.send(StompJmsSession.java:676) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsMessageProducer.send(StompJmsMessageProducer.java:157) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsMessageProducer.send(StompJmsMessageProducer.java:114) ~[stompjms-client-1.13.jar:1.13]
+! at edu.sjsu.cmpe.procurement.ProcurementService.publishTopicMessage(ProcurementService.java:184) ~[classes/:na]
+! at edu.sjsu.cmpe.procurement.jobs.ProcurementSchedulerJob.doJob(ProcurementSchedulerJob.java:52) ~[classes/:na]
+! at de.spinscale.dropwizard.jobs.Job.execute(Job.java:22) ~[classes/:na]
+! at org.quartz.core.JobRunShell.run(JobRunShell.java:207) ~[quartz-2.2.0.jar:na]
+! at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:560) [quartz-2.2.0.jar:na]
+ERROR [2014-04-07 03:43:41,643] org.quartz.core.ErrorLogger: Job (DEFAULT.6da64b5bd2ee-39684f35-ab6c-4d3a-9747-832a6c2e8b9b threw an exception.
+! org.quartz.SchedulerException: Job threw an unhandled exception.
+! at org.quartz.core.JobRunShell.run(JobRunShell.java:218) ~[quartz-2.2.0.jar:na]
+! at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:560) [quartz-2.2.0.jar:na]
+Caused by: ! java.lang.NullPointerException: null
+! at org.fusesource.stomp.jms.StompChannel.getConnectedHeader(StompChannel.java:521) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompChannel.getServerAndVersion(StompChannel.java:513) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsConnection.getChannel(StompJmsConnection.java:348) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsSession.getNextMessageId(StompJmsSession.java:855) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsSession.send(StompJmsSession.java:689) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsSession.send(StompJmsSession.java:676) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsMessageProducer.send(StompJmsMessageProducer.java:157) ~[stompjms-client-1.13.jar:1.13]
+! at org.fusesource.stomp.jms.StompJmsMessageProducer.send(StompJmsMessageProducer.java:114) ~[stompjms-client-1.13.jar:1.13]
+! at edu.sjsu.cmpe.procurement.ProcurementService.publishTopicMessage(ProcurementService.java:184) ~[classes/:na]
+! at edu.sjsu.cmpe.procurement.jobs.ProcurementSchedulerJob.doJob(ProcurementSchedulerJob.java:52) ~[classes/:na]
+! at de.spinscale.dropwizard.jobs.Job.execute(Job.java:22) ~[classes/:na]
+! at org.quartz.core.JobRunShell.run(JobRunShell.java:207) ~[quartz-2.2.0.jar:na]
+!... 1 common frames omitted
+INFO  [2014-04-07 03:44:14,306] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:9000
+INFO  [2014-04-07 03:44:14,307] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:9090
+INFO  [2014-04-07 03:44:14,309] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-04-07 03:44:14,309] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,file:/Users/dhanyabalasundaran/Documents/workspace-273-assignment2/cmpe273-assignment2/procurement-service/target/classes/}
+INFO  [2014-04-07 03:44:16,362] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,file:/Users/dhanyabalasundaran/Documents/workspace-273-assignment2/cmpe273-assignment2/procurement-service/target/classes/}
+INFO  [2014-04-07 03:44:16,363] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-04-07 03:44:16,464] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutting down.
+INFO  [2014-04-07 03:44:16,465] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED paused.
+INFO  [2014-04-07 03:44:23,063] org.quartz.core.QuartzScheduler: Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED shutdown complete.
