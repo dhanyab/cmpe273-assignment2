@@ -50,6 +50,7 @@ public class ProcurementService extends
 	static String queueName;
 	private static Session session = null;
 	private static MessageConsumer consumer;
+	MessageProducer producer;
 	private static HashMap<Integer, String> orders = new HashMap<Integer, String>();
 	private static String orderedIsbns = null;
 	private static BookOrders bookOrders = new BookOrders();
@@ -132,7 +133,7 @@ public class ProcurementService extends
 				break;
 
 		}
-
+		consumer.close();
 		connection.close();
 		return bookOrders;
 	}
@@ -183,6 +184,7 @@ public class ProcurementService extends
         	System.out.println(msg);
         	producer.send(msg);
         }
+        producer.close();
         connection.close();
 	}
 
