@@ -118,7 +118,6 @@ public class LibraryService extends Service<LibraryServiceConfiguration> {
 		producer.send(message);
 		System.out.println("Placed an order for the book in the queue"
 				+ libraryName + ":" + isbn.toString());
-		producer.close();
 		connection.close();
 
 	}

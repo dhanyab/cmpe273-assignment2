@@ -92,7 +92,7 @@ public class Listener {
 						.println("Unexpected message type: " + msg.getClass());
 			}
 		}
-		consumer.close();
+		//consumer.close();
 		connection.close();
 	}
 
