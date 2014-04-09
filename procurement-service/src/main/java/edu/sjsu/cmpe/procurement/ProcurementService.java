@@ -133,7 +133,7 @@ public class ProcurementService extends
 
 		}
 
-		//connection.close();
+		connection.close();
 		return bookOrders;
 	}
 
@@ -183,6 +183,7 @@ public class ProcurementService extends
         	System.out.println(msg);
         	producer.send(msg);
         }
+        connection.close();
 	}
 
 }
